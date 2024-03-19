@@ -7,7 +7,7 @@ import java.time.Duration;
 
 public class GWD {
 
-    public static WebDriver driver;
+    private static WebDriver driver;
 
 
     public static WebDriver getDriver(){
