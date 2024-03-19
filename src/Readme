@@ -17,7 +17,7 @@
 4- Ayarlar:
    a) Intelije 2 tane plugin eklenecek
       1- Cucumber for Java
-      2- Gherkin Language
+      2- Gherkin Language -> https://cucumber.io/docs/gherkin/reference/#keywords
 
    b) POM.xml -> Project Object Model Ayarları
       ilgili Lib ler eklenecek
