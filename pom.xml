@@ -30,6 +30,7 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>7.15.0</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- Bana bi TestNG    -->
@@ -47,6 +48,7 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
             <version>7.15.0</version>
+            <scope>test</scope>
         </dependency>
 
         <!--        SLF4J yokedici-->
