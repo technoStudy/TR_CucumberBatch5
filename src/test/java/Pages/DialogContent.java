@@ -17,5 +17,7 @@ public class DialogContent {
     @FindBy(css="input[formcontrolname='password']")
     public WebElement password;
 
+    @FindBy(css="button[aria-label='LOGIN']")
+    public WebElement loginButton;
 
 }
