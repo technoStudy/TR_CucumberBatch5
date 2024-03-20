@@ -24,22 +24,28 @@ public class _01_LoginSteps {
     public void enter_username_and_password_and_click_login_button() {
         System.out.println("username ve şifre gönderildi");
 
-        WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOf(dc.username));
+//        WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
+//        wait.until(ExpectedConditions.visibilityOf(dc.username));
+//
+//        dc.username.sendKeys("turkeyts");
+//        dc.password.sendKeys("TechnoStudy123");
+//        dc.loginButton.click();
 
-        dc.username.sendKeys("turkeyts");
-        dc.password.sendKeys("TechnoStudy123");
-        dc.loginButton.click();
+        dc.mySendKeys(dc.username, "turkeyts");
+        dc.mySendKeys(dc.password, "TechnoStudy123");
+        dc.myClick(dc.loginButton);
     }
 
     @Then("User should login successfully")
     public void user_should_login_successfully() {
         System.out.println("Siteye girildiği kontrol edildi");
 
-        WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.textToBePresentInElement(dc.headText,"Internship"));
+//        WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
+//        wait.until(ExpectedConditions.textToBePresentInElement(dc.headText,"Internship"));
+//
+//        Assert.assertTrue(dc.headText.getText().equals("Internship"));
 
-        Assert.assertTrue(dc.headText.getText().equals("Internship"));
+        dc.verifyContainsText(dc.headText,"Internship");
     }
 
 
