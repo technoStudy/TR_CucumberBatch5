@@ -29,7 +29,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
     public WebElement nameInput;
 
-    @FindBy(xpath = "//ms-text-field[@formcontrolname='code' ]//input")
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
     public WebElement codeInput;
 
     @FindBy(xpath = "//ms-save-button/button")
