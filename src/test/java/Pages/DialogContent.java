@@ -63,7 +63,7 @@ public class DialogContent extends ParentPage{
         myClick(searchButton);
 
         //search butonun tıklanabilir olana kadar bekle
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        wait.until(ExpectedConditions.elementToBeClickable(searchButton));
 
         myClick(deleteImageBtn);
         myClick(deleteDialogBtn);
