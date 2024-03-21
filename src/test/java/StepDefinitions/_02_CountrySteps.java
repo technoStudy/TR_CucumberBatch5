@@ -31,4 +31,12 @@ public class _02_CountrySteps {
     public void successMessageShouldBeDisplayed() {
         dc.verifyContainsText(dc.successMessage,"success");
     }
+
+    @When("Create a country name as {string} code as {string}")
+    public void createACountryNameAsCodeAs(String ulkeAdi, String ulkeKod) {
+        dc.myClick(dc.addButton);
+        dc.mySendKeys(dc.nameInput,ulkeAdi);
+        dc.mySendKeys(dc.codeInput,ulkeKod);
+        dc.myClick(dc.saveButton);
+    }
 }
