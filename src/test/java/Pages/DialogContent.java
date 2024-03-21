@@ -4,6 +4,7 @@ import Utilities.GWD;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class DialogContent extends ParentPage{
 
@@ -57,7 +58,16 @@ public class DialogContent extends ParentPage{
     public WebElement deleteDialogBtn;
 
 
+    public void deleteItem(String deleteName){
+        mySendKeys(searchInput, deleteName);
+        myClick(searchButton);
 
+        //search butonun tıklanabilir olana kadar bekle
+        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+
+        myClick(deleteImageBtn);
+        myClick(deleteDialogBtn);
+    }
 
 
 

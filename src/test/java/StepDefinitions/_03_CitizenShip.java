@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class _03_CitizenShip {
     LeftNav ln = new LeftNav();
@@ -45,9 +46,6 @@ public class _03_CitizenShip {
 
     @When("user delete name as {string}")
     public void userDeleteNameAs(String deleteName) {
-        dc.mySendKeys(dc.searchInput, deleteName);
-        dc.myClick(dc.searchButton);
-        dc.myClick(dc.deleteImageBtn);
-        dc.myClick(dc.deleteDialogBtn);
+          dc.deleteItem(deleteName);
     }
 }
