@@ -2,6 +2,7 @@
 #CitizenShip sayfasına gidiniz.
 #Create işlemini parameter yöntemi ile doğrulayınız.
 #Daha sonra aynı bilgilerle tekrar Create yapılamadığını doğrulayınız. (negatif test)
+#Ayrı sebaryoda girilen bilgiyi silme işlemini doğrulayınız
 
 Feature: Citizenship Functionality
 
@@ -12,9 +13,13 @@ Feature: Citizenship Functionality
     And Navigate to CitizenShip
 
   Scenario: Create a Citizenship with parameter
-    When Create a CitizenShip name as "ismetcs1" shortkod as "icskod1"
+    When Create a CitizenShip name as "ismetcs12" shortkod as "icskod12"
     Then Success message should be displayed
 
   Scenario: Create a Citizenship with parameter
-    When Create a CitizenShip name as "ismetcs1" shortkod as "icskod1"
+    When Create a CitizenShip name as "ismetcs12" shortkod as "icskod12"
     Then Already exist message should be displayed
+
+  Scenario: Delete Citizenship
+    When user delete name as "ismetcs12"
+    Then Success message should be displayed

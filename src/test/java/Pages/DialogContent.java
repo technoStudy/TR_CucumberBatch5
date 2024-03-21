@@ -44,6 +44,23 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//div[contains(text(),'already')]")
     public WebElement alreadyExist;
 
+    @FindBy(xpath = "//ms-text-field//input[@data-placeholder='Name']")
+    public WebElement searchInput;
+
+    @FindBy(xpath = "//div[@class='control-full']/button")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "//ms-delete-button//button")
+    public WebElement deleteImageBtn;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement deleteDialogBtn;
+
+
+
+
+
+
 
 
 }
