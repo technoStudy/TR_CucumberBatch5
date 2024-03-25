@@ -20,8 +20,8 @@ Feature: Datatable Örnek
       | Ulvi   | 6666   |
       | Esma   | 77777  |
 
- # dataProvider (TestNG için), Senaryo Outline (cucumber)
+ #  dataProvider (TestNG için), Senaryo Outline (cucumber)
  #  görevi verilen her değer için, tüm senayo çalışır
  #
  #  DataTable ise , sadece bir step e, çoklu parametre vermek
- #  için kullanılır
+ #  için kullanılır, sadece 1 kez tüm parametreleri stepin içine atar
