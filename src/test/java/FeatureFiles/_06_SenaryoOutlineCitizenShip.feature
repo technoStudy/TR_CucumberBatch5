@@ -18,8 +18,8 @@ Feature: Citizenship Functionality
 
     Examples:
       | name   | shortName   |
-      | ismCS1d | ismCS1short |
-      | ismCS2d | ismCS2short |
-      | ismCS3d | ismCS3short |
-      | ismCS4d | ismCS4short |
-      | ismCS5d | ismCS5short |
+      | ismCS1 | ismCS1short |
+      | ismCS2 | ismCS2short |
+      | ismCS3 | ismCS3short |
+      | ismCS4 | ismCS4short |
+      | ismCS5 | ismCS5short |
