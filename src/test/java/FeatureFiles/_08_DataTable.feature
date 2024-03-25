@@ -30,16 +30,16 @@ Feature: DataTable Functionality
 
   Scenario: CitizenShip Create and Delete
     And Click on the Element in LeftNav
-      | setup      |
-      | parameters |
-      | citizenship  |
+      | setup       |
+      | parameters  |
+      | citizenship |
 
     And Click on the Element in Dialog
       | addButton |
 
     And User sending the keys in Dialog
       | nameInput | isSCUlk19 |
-      | shortName | isSC1    |
+      | shortName | isSC1     |
 
     And Click on the Element in Dialog
       | saveButton |
@@ -51,6 +51,28 @@ Feature: DataTable Functionality
 
     Then Success message should be displayed
 
+
+  Scenario: Create Nationality and Delete
+    And Click on the Element in LeftNav
+      | setup       |
+      | parameters  |
+      | nationalities |
+
+    And Click on the Element in Dialog
+      | addButton |
+
+    And User sending the keys in Dialog
+      | nameInput | isNTUlk19 |
+
+    And Click on the Element in Dialog
+      | saveButton |
+
+    Then Success message should be displayed
+
+    And User delete the Element from Dialog
+      | isNTUlk19 |
+
+    Then Success message should be displayed
 
 
 
