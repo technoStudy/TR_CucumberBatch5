@@ -9,5 +9,21 @@ Feature: DataTable Functionality
     And Click on the Element in LeftNav
       | setup      |
       | parameters |
-      | citizenship  |
+      | countries  |
 
+    And Click on the Element in Dialog
+      | addButton |
+
+    And User sending the keys in Dialog
+      | nameInput | ismetUlk188 |
+      | codeInput | isKod11    |
+
+    And Click on the Element in Dialog
+      | saveButton |
+
+    Then Success message should be displayed
+
+#    And User delete the Element from Dialog
+#      | ismetUlk188 |
+
+    Then Success message should be displayed
