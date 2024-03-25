@@ -19,3 +19,9 @@ Feature: Datatable Örnek
       | Fatma  | 56555  |
       | Ulvi   | 6666   |
       | Esma   | 77777  |
+
+ # dataProvider (TestNG için), Senaryo Outline (cucumber)
+ #  görevi verilen her değer için, tüm senayo çalışır
+ #
+ #  DataTable ise , sadece bir step e, çoklu parametre vermek
+ #  için kullanılır
