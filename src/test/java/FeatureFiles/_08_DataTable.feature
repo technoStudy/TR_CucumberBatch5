@@ -54,8 +54,8 @@ Feature: DataTable Functionality
 
   Scenario: Create Nationality and Delete
     And Click on the Element in LeftNav
-      | setup       |
-      | parameters  |
+      | setup         |
+      | parameters    |
       | nationalities |
 
     And Click on the Element in Dialog
@@ -74,7 +74,7 @@ Feature: DataTable Functionality
 
     Then Success message should be displayed
 
-
+  Scenario: Fee Functionality and Delete
 
 
 
