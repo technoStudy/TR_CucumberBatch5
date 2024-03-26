@@ -75,7 +75,27 @@ Feature: DataTable Functionality
     Then Success message should be displayed
 
   Scenario: Fee Functionality and Delete
+    And Click on the Element in LeftNav
+      | setup      |
+      | parameters |
+      | fees       |
 
+    And Click on the Element in Dialog
+      | addButton |
 
+    And User sending the keys in Dialog
+      | nameInput       | isFee1 |
+      | codeInput       | 122312 |
+      | integrationCode | 121    |
+      | priorityCode    | 23456   |
 
+    And Click on the Element in Dialog
+      | toggleBar  |
+      | saveButton |
 
+    Then Success message should be displayed
+
+    And User delete the Element from Dialog
+      | isFee1 |
+
+    Then Success message should be displayed
