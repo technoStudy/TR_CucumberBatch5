@@ -18,3 +18,9 @@ altına açılarak aşağıdaki 2 satır eklendi.
 
 extent.reporter.spark.start=true
 extent.reporter.spark.out=test-output/SparkReport/Spark.html
+
+4-  extend report türkçe bilg çalışmaması sebebiyle kondu
+
+     public static WebDriver getDriver() {
+           Locale.setDefault(new Locale("EN"));
+           System.setProperty("user.language", "EN");
