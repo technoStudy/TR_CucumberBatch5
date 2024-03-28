@@ -23,9 +23,9 @@ public class Hooks {
 
         //senaryo fail olduysa ekran kaydı al
         if (senaryo.isFailed()){
-            TakesScreenshot ts=(TakesScreenshot) driver;
-            File hafizadakiHali= ts.getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(hafizadakiHali, new File("ekranGoruntuler\\screenshot.jpg"));
+            TakesScreenshot ts=(TakesScreenshot) GWD.getDriver();
+            byte[] hafizadakiHali= ts.getScreenshotAs(OutputType.BYTES);
+            senaryo.attach(hafizadakiHali, "image/png", "screenshot name");
         }
 
         GWD.quitDriver();
