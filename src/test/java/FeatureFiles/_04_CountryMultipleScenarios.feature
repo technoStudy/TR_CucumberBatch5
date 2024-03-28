@@ -11,6 +11,7 @@ Feature: Country Multi Scenario
     When Create a country
     Then Success message should be displayed
 
+  @Regression
   Scenario: Create a Country 2
     When Create a country name as "ismUlk12" code as "ismUlk12Kod"
     Then Success message should be displayed

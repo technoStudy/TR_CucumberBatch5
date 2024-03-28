@@ -5,8 +5,8 @@ import io.cucumber.testng.CucumberOptions;
 
 
 @CucumberOptions(
-        tags = "@SmokeTest or @Regression", // bütün senaryolarda SmokeTest tag ine sahip olanları çalıştır
-        features = {"src/test/java/FeatureFiles"}, //klasördeki bütün feature lar
+        tags = "@SmokeTest or @Regression",
+        features = {"src/test/java/FeatureFiles"},
         glue = {"StepDefinitions"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
