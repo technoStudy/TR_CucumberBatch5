@@ -24,3 +24,11 @@ extent.reporter.spark.out=test-output/SparkReport/Spark.html
      public static WebDriver getDriver() {
            Locale.setDefault(new Locale("EN"));
            System.setProperty("user.language", "EN");
+
+5- Her raporun ayrı olması için
+   Aşağıdaki kodu extent.properties e ekliyoruz
+
+       #FolderName
+       basefolder.name=Test Reports/TestReport
+       basefolder.datetimepattern=d-MMM-YY HH.mm.ss
+
