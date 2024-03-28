@@ -1,0 +1,77 @@
+Takım kimlerden oluşuyor
+
+PO-> idari, bi kaçtane takım bağlı
+BA
+Yazlım Mimar
+takım : lead-scrum master,dev, test
+4-5 dev
+4-5 tester
+
+ilk işe girişte :
+  yetki, email, resmi işler (1 ay) onboarding
+  bilgi aktarımı, KT, online eğitimler, şirket kültürü
+  2,3 ay direk iş beklemezler
+
+Bilgiyasar Ortamı,
+  DEV Ortam,
+  TEST Ortamı : dev geliştirmeyi bitince buraya atıyor
+                test1,test2,tes3
+  UAT Ortamı : testırın onayladıkları, buraya atılıyor
+      İş tarafından onay alınıyor.
+
+  14 günde bir tüm yapılanlar
+  Canlı ortama, PROD Ortamı- Release günü
+
+
+--> Bir günüm nasıl geçiyor
+    Sprintle başlıyor:
+
+    1- Email leri kontrol ediyoruz
+    2- Gece çalışması ayarlanmış, testler çalışmış, ve
+       report sonuçları çıkmış olarak kontrol edyorum
+    3- 9:15 Günlük toplantı :daily: dün ne yaptım,
+       bugün ne yapacağım.Beni engelleyen bir şey var mı
+    4- Manuel testi geçmiş olanları, Automation a ekliyorum
+       Dev bitridiklerini de, Manuel test yapıyorum
+       defect : hemen Jira dan task açıyorum, Dev atıyorum
+       şu kullanıcı ile girdim, şu adımları izledim, şu hata
+       gözüktü, hata ekran görüntüsü ektedir.
+       (evidance) kanıtları ekleyerek.
+
+       Dev-Test anlaşamaz -> kalite ortaya çıkar
+
+       işi sahiplenmemiz lazım.
+
+    5- Sprint review -> 14.günde yapılıyor
+       yapılan geliştirme ve testler tümtakıma anlatılıyor.
+
+    6- Sprint retrospective -> 15.günde
+       iş akışlarında nasıl iyileştirmeler yaparız.
+       neleri artırmalıyız ve yapmalıyız,
+       neleri de azaltmalıyız.
+
+    7- İş günü bitmiş oluyor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

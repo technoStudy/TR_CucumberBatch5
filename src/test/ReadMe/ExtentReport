@@ -1,0 +1,21 @@
+ExtendReport İşlemleri
+https://www.programsbuzz.com
+https://www.programsbuzz.com/article/cucumber-testng-generate-extent-report-using-extent-adapter-grasshopper
+
+1- POM a ilgili dependecy eklnir.
+
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.9.2</version>
+            <version>1.10.1</version>
+        </dependency>
+
+2- Runner Class aşağıdaki plugin eklenir
+   plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+
+3- extent.properties   dosyası resources klasörünün
+altına açılarak aşağıdaki 2 satır eklendi.
+
+extent.reporter.spark.start=true
+extent.reporter.spark.out=test-output/SparkReport/Spark.html
