@@ -2,6 +2,8 @@ package Utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 import java.util.Locale;
@@ -9,16 +11,26 @@ import java.util.Locale;
 
 public class GWD {
 
-    private static ThreadLocal<WebDriver> threadDriver=new ThreadLocal<>();
+    private static ThreadLocal<WebDriver> threadDriver=new ThreadLocal<>();  // thread e özel driver
+    private static ThreadLocal<String> threadBrowserName=new ThreadLocal<>(); // o thread e özel browser name
+
 
     public static WebDriver getDriver(){
 
         Locale.setDefault(new Locale("EN"));
         System.setProperty("user.language", "EN");
 
+        if (threadBrowserName.get()==null) // XML den çalışmayan durumlar için
+            threadBrowserName.set("chrome");  // default chrome
+
         if (threadDriver.get() == null) { //1 kez oluştur
 
-            threadDriver.set(new ChromeDriver()); //bulunduğum hatta driver yok idi, ben bir tane set ettim
+            switch (threadBrowserName.get())
+            {
+                case "firefox" : threadDriver.set(new FirefoxDriver()); break;
+                case "edge" : threadDriver.set(new EdgeDriver()); break;
+                default: threadDriver.set(new ChromeDriver());  //bulunduğum hatta driver yok idi, ben bir tane set ettim
+            }
 
             threadDriver.get().manage().window().maximize();
             threadDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
@@ -42,9 +54,9 @@ public class GWD {
 
             threadDriver.get().quit();
 
-            WebDriver driver= threadDriver.get();
-            driver=null;
-            threadDriver.set(driver);//bu hattaki driver NULL oldu
+            WebDriver driver= threadDriver.get(); //hattaki driverı aldım
+            driver=null;  // null haline getirdim
+            threadDriver.set(driver);//tekrar hatta atadım.
         }
 
     }
