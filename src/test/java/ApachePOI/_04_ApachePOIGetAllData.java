@@ -13,8 +13,9 @@ public class _04_ApachePOIGetAllData {
         Workbook workbook= WorkbookFactory.create(inputStream);
         Sheet sheet=workbook.getSheet("Sheet1");
 
+        // 1.yol
         //zoo.length : kaç satır olduğunu
-        int rowCount=sheet.getPhysicalNumberOfRows(); // Kaç tane satır var
+        int rowCount=sheet.getPhysicalNumberOfRows(); // Kaç tane satır var, ilk null satıra kadar
         System.out.println("rowCount = " + rowCount);
 
         for (int i = 0; i < rowCount; i++) {
@@ -28,6 +29,18 @@ public class _04_ApachePOIGetAllData {
 
             System.out.println();
         }
+
+        // 2.Yol
+        for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) { //zoo.length
+
+            for (int j = 0; j < sheet.getRow(i).getPhysicalNumberOfCells(); j++) {  //zoo[i].length
+                System.out.print(sheet.getRow(i).getCell(j) + "\t");
+            }
+
+            System.out.println();
+        }
+
+
 
     }
 }
