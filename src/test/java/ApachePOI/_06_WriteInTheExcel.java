@@ -15,11 +15,12 @@ public class _06_WriteInTheExcel {
         Workbook workbook= WorkbookFactory.create(inputStream);
         Sheet sheet=workbook.getSheetAt(0);
 
-        Row yeniSatir=sheet.createRow(0); //yeni satır oluşturdum
+        int enSonSatirMiktari=sheet.getPhysicalNumberOfRows();
+        Row yeniSatir=sheet.createRow(enSonSatirMiktari); //yeni satır oluşturdum
         Cell yeniHucre=yeniSatir.createCell(0); // yenisatırda yeni hücre oluşturdum
 
         yeniHucre.setCellValue("Merhaba Dünya"); // yeni hücreye değer verdim
-        //yazma işlemim bittim
+        //yazma işlemim bitti
         inputStream.close();// aynı anda okuma ve kaydetme yapılamıyor, okuma modu kapatıldı
 
         // dosyayı KAYDETME modunda aç
