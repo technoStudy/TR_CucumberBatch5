@@ -20,7 +20,6 @@ public class _04_ApachePOIGetAllData {
 
         for (int i = 0; i < rowCount; i++) {
             Row row=sheet.getRow(i);
-
             int cellCount=row.getPhysicalNumberOfCells(); // bu satırdaki hücre sayısı
 
             for (int j = 0; j < cellCount; j++) {
@@ -34,7 +33,7 @@ public class _04_ApachePOIGetAllData {
         for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) { //zoo.length
 
             for (int j = 0; j < sheet.getRow(i).getPhysicalNumberOfCells(); j++) {  //zoo[i].length
-                System.out.print(sheet.getRow(i).getCell(j) + "\t");
+                System.out.print(sheet.getRow(i).getCell(j) + "\t"); //zoo[i][j]
             }
 
             System.out.println();
