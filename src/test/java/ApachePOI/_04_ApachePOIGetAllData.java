@@ -18,9 +18,15 @@ public class _04_ApachePOIGetAllData {
         System.out.println("rowCount = " + rowCount);
 
         for (int i = 0; i < rowCount; i++) {
+            Row row=sheet.getRow(i);
 
+            int cellCount=row.getPhysicalNumberOfCells(); // bu satırdaki hücre sayısı
 
+            for (int j = 0; j < cellCount; j++) {
+                  System.out.print(row.getCell(j) + "\t");
+            }
 
+            System.out.println();
         }
 
     }
