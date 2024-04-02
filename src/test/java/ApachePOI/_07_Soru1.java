@@ -1,5 +1,12 @@
 package ApachePOI;
 
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
 /**
  *  Ekrandaki gibi bir Excel Çarpım tablosunu
  *  varolan boş bir excel dosyasına
@@ -21,7 +28,21 @@ package ApachePOI;
 
 public class _07_Soru1 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        String path="src/test/java/ApachePOI/resource/Carpim.xlsx";
+        FileInputStream inputStream=new FileInputStream(path);
+        Workbook workbook= WorkbookFactory.create(inputStream);
+        Sheet sheet=workbook.getSheetAt(0);
+
+
+        for (int i = 1; i <= 10; i++) {
+
+            for (int j = 1; j <= 10 ; j++) {
+                System.out.println(i+"x"+j+"="+(i*j));
+
+            }
+
+        }
 
 
     }
