@@ -20,10 +20,11 @@ public class _08_NewExcelWrite {
         Cell yeniHucre=yeniSatir.createCell(0);
         yeniHucre.setCellValue("Merhaba yeni Excel");
 
+        // ctrl+s
         String path="src/test/java/ApachePOI/resource/YeniExcel.xlsx";
-        FileOutputStream outputStream=new FileOutputStream(path);
+        FileOutputStream outputStream=new FileOutputStream(path); // kaydetme modu
         workbook.write(outputStream);
         workbook.close();
-        outputStream.close();
+        outputStream.close(); //kaydetme bağlantısını kapat
     }
 }
