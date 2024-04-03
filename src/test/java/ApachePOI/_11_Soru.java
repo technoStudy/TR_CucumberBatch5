@@ -66,6 +66,7 @@ public class _11_Soru {
             {
                 System.out.println(ex.getMessage());
             }
+            System.out.println("Dosya yok ise bölümü çalıştı");
         }
         else // dosya var ise
         {
@@ -98,6 +99,8 @@ public class _11_Soru {
             catch (Exception ex){
                 System.out.println(ex.getMessage());
             }
+
+            System.out.println("Dosya VAR ise bölümü çalıştı");
         }
 
 
