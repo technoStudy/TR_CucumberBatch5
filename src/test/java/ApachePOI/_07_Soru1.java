@@ -62,3 +62,5 @@ public class _07_Soru1 {
 
 
 }
+
+// TODO : yukarıdaki alt alta gelen çarpım bölümlerini yan yana yapınız.
