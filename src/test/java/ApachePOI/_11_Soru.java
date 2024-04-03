@@ -33,7 +33,7 @@ import java.io.FileOutputStream;
 public class _11_Soru {
 
     public static void main(String[] args) {
-        String path="";
+        String path="src/test/java/ApachePOI/resource/TestSonuclari.xlsx";
         String testSonuc="Test Passed";
 
         writeToExcel(path, testSonuc); //excel create
@@ -69,21 +69,35 @@ public class _11_Soru {
         }
         else // dosya var ise
         {
-            FileInputStream inputStream=new FileInputStream(path);
-            Workbook workbook=WorkbookFactory.create(inputStream);
-            Sheet sheet= workbook.getSheetAt(0);
+            FileInputStream inputStream=null;
+            Workbook workbook=null;
+            Sheet sheet =null;
+
+            try {
+                inputStream = new FileInputStream(path);
+                workbook = WorkbookFactory.create(inputStream);
+                sheet = workbook.getSheetAt(0);
+            }
+            catch (Exception ex)
+            {
+                System.out.println(ex.getMessage());
+            }
 
             int satirMiktar=sheet.getPhysicalNumberOfRows();
             Row yeniSatir=sheet.createRow(satirMiktar);
             Cell yeniHucre=yeniSatir.createCell(0);
             yeniHucre.setCellValue(testSonuc);
 
-            inputStream.close();
-
-            FileOutputStream outputStream=new FileOutputStream(path);
-            workbook.write(outputStream);
-            workbook.close();
-            outputStream.close();
+            try {
+                inputStream.close();
+                FileOutputStream outputStream = new FileOutputStream(path);
+                workbook.write(outputStream);
+                workbook.close();
+                outputStream.close();
+            }
+            catch (Exception ex){
+                System.out.println(ex.getMessage());
+            }
         }
 
 
