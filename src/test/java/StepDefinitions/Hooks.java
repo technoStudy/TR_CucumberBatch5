@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Utilities.ExcelUtility;
 import Utilities.GWD;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -15,6 +16,9 @@ public class Hooks {
     @After // Cucumber ın Annotation ı
             // her senaryodan sonra çalışır
     public void after(Scenario senaryo){
+
+        ExcelUtility.writeToExcel("src/test/java/ApachePOI/resource/CucumberTestSonuclari.xlsx",
+                senaryo.getName()+" "+(senaryo.isFailed()? "Failed": "Passed") );
 
         //senaryo fail olduysa ekran kaydı al
         if (senaryo.isFailed()){
