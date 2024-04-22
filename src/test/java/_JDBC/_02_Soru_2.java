@@ -16,6 +16,7 @@ public class _02_Soru_2 extends JDBCParent{
             System.out.println(rs.getString("city"));
 
         DBConnectionClose();
+        //test 1
     }
 
 
