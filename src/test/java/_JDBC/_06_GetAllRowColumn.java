@@ -37,7 +37,7 @@ public class _06_GetAllRowColumn extends JDBCParent{
         int kolonSayisi= rsmd.getColumnCount();
         System.out.println("kolonSayisi = " + kolonSayisi);
         for (int i = 1; i <= kolonSayisi; i++) {
-            System.out.println(rsmd.getColumnName(i));
+            System.out.println(rsmd.getColumnName(i)+" "+rsmd.getColumnTypeName(i));
         }
 
         rs.next(); // 1.Satırdayım
@@ -45,6 +45,7 @@ public class _06_GetAllRowColumn extends JDBCParent{
         System.out.println("2.Kolon="+rs.getString(2)); // 2.Kolon
         System.out.println("3.Kolon="+rs.getString(3)); // 3.Kolon
 
+        System.out.println("******************");
         for (int i = 1; i < kolonSayisi; i++)
             System.out.println(i+".Kolon="+rs.getString(i));
 
