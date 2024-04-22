@@ -38,7 +38,7 @@ public class _05_Soru extends JDBCParent{
 
         for (int i = 1; i < sonSatirNo; i++) {
             rs.relative(1);
-            System.out.println(i+".Satir : "+rs.getString(1));
+            System.out.println((i+1)+".Satir : "+rs.getString(1));
         }
 
         DBConnectionClose();
