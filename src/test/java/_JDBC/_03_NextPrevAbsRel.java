@@ -52,3 +52,4 @@ public class _03_NextPrevAbsRel extends JDBCParent{
 // rs.relative(10) : bulunduğu yerden 10.satıra ileri gider.
 // rs.absolute(-10) : - (eksi) sondan demektir, sondan 10.satır
 // rs.relative(-5) :  - (eksi) bulunduğu yerden 5 satır geri
+// ilk satırdan relative ile 5 geri gitmek istersek sınırı taştığı için hata verecektir
