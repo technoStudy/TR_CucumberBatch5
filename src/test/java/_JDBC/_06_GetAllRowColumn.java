@@ -3,6 +3,7 @@ package _JDBC;
 import org.testng.annotations.Test;
 
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 public class _06_GetAllRowColumn extends JDBCParent{
@@ -22,6 +23,35 @@ public class _06_GetAllRowColumn extends JDBCParent{
 
         DBConnectionClose();
     }
+
+    @Test
+    public void Test2() throws SQLException {
+        DBConnectionOpen();
+
+        ResultSet rs=sorguEkrani.executeQuery("select * from city");
+
+        ResultSetMetaData rsmd=rs.getMetaData(); // sorgu sonucunda DATA dışındaki veriler, kolon sayısı ve kolon isimleri
+        // MetaFizik : fizik dışındakiler
+        // MetaData  : Data dışı
+
+        int kolonSayisi= rsmd.getColumnCount();
+        System.out.println("kolonSayisi = " + kolonSayisi);
+        for (int i = 1; i <= kolonSayisi; i++) {
+            System.out.println(rsmd.getColumnName(i));
+        }
+
+        rs.next(); // 1.Satırdayım
+        System.out.println("1.Kolon="+rs.getString(1)); // 1.Kolon
+        System.out.println("2.Kolon="+rs.getString(2)); // 2.Kolon
+        System.out.println("3.Kolon="+rs.getString(3)); // 3.Kolon
+
+        for (int i = 1; i < kolonSayisi; i++)
+            System.out.println(i+".Kolon="+rs.getString(i));
+
+//        rs.next(); // 2.satıra geçildi
+        DBConnectionClose();
+    }
+
 
 
 }

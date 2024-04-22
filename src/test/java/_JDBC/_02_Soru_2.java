@@ -10,6 +10,7 @@ public class _02_Soru_2 extends JDBCParent{
     @Test
     public void Test1() throws SQLException {
         DBConnectionOpen();
+
         ResultSet rs=sorguEkrani.executeQuery("select * from city");
 
         while (rs.next())
