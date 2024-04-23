@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
+
 public class DialogContent extends ParentPage{
 
     public DialogContent() {
@@ -75,6 +77,8 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//span[text()=' Administrator ']")
     public WebElement administrator;
 
+    @FindBy(xpath = "//tbody//tr//td[2]")
+    public List<WebElement> nameList;
 
     public void deleteItem(String deleteName){
         mySendKeys(searchInput, deleteName);
