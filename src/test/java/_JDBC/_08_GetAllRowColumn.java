@@ -16,7 +16,7 @@ public class _08_GetAllRowColumn extends JDBCParent{
     @Test
     public void Test1()
     {
-        String sorgu="select * from customer";
+        String sorgu="select * from language";
         List<List<String>>  donenTablo=getListData(sorgu); //giden var, dönen var
         //System.out.println(donenTablo);
         for(List<String> satir : donenTablo) {
@@ -36,6 +36,12 @@ public class _08_GetAllRowColumn extends JDBCParent{
             ResultSet rs = sorguEkrani.executeQuery(sorgu);
             ResultSetMetaData rsmd = rs.getMetaData(); // kolon sayısı
 
+            // kolon isimleri tablonun ilk satırına eklendi
+            ArrayList<String> kolonSatiri = new ArrayList<>();
+            for (int i = 1; i <= rsmd.getColumnCount(); i++)
+                kolonSatiri.add(rsmd.getColumnName(i));
+            tablo.add(kolonSatiri);
+
             while (rs.next()) {
 
                 ArrayList<String> satir = new ArrayList<>();
@@ -54,7 +60,7 @@ public class _08_GetAllRowColumn extends JDBCParent{
             System.out.println(ex.getMessage());
         }
         finally {
-            DBConnectionClose();
+            DBConnectionClose();  // hata olsa d aolmasa da çalış
         }
 
         return tablo;
