@@ -16,9 +16,15 @@ public class _08_GetAllRowColumn extends JDBCParent{
     @Test
     public void Test1()
     {
-        String sorgu="select * from language";
+        String sorgu="select * from customer";
         List<List<String>>  donenTablo=getListData(sorgu); //giden var, dönen var
-        System.out.println(donenTablo);
+        //System.out.println(donenTablo);
+        for(List<String> satir : donenTablo) {
+            for (String kolon : satir)
+                System.out.print(kolon+"\t");
+
+            System.out.println();
+        }
     }
 
     public List<List<String>> getListData(String sorgu)
