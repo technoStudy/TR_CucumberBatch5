@@ -33,10 +33,14 @@ public class GWD {
                 case "edge" : threadDriver.set(new EdgeDriver()); break;
                 default:
 
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                    if (isRunningOnJenkins()){
+                        ChromeOptions options = new ChromeOptions();
+                        options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
 
-                    threadDriver.set(new ChromeDriver(options));  //bulunduğum hatta driver yok idi, ben bir tane set ettim
+                        threadDriver.set(new ChromeDriver(options));  //bulunduğum hatta driver yok idi, ben bir tane set ettim
+                    }
+                    else
+                        threadDriver.set(new ChromeDriver());
             }
 
             threadDriver.get().manage().window().maximize();
@@ -46,6 +50,11 @@ public class GWD {
         return threadDriver.get();
     }
 
+
+    public static boolean isRunningOnJenkins() {
+        String jenkinsHome = System.getenv("JENKINS_HOME");
+        return jenkinsHome != null && !jenkinsHome.isEmpty();
+    }
 
 
     public static void quitDriver(){
