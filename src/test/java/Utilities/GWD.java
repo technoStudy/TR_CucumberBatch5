@@ -2,6 +2,7 @@ package Utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -30,7 +31,12 @@ public class GWD {
             {
                 case "firefox" : threadDriver.set(new FirefoxDriver()); break;
                 case "edge" : threadDriver.set(new EdgeDriver()); break;
-                default: threadDriver.set(new ChromeDriver());  //bulunduğum hatta driver yok idi, ben bir tane set ettim
+                default:
+
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+
+                    threadDriver.set(new ChromeDriver(options));  //bulunduğum hatta driver yok idi, ben bir tane set ettim
             }
 
             threadDriver.get().manage().window().maximize();
