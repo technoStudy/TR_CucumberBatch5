@@ -33,7 +33,7 @@ public class GWD {
                 case "edge" : threadDriver.set(new EdgeDriver()); break;
                 default:
 
-                    if (isRunningOnJenkins()){
+                    if (isRunningOnJenkins()){ //program jenkins den mi çalışıyor
                         ChromeOptions options = new ChromeOptions();
                         options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
 
