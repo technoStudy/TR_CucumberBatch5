@@ -26,12 +26,10 @@ public class _15_JDBCSteps {
         for (int i = 0; i < UIList.size(); i++)
             System.out.println(UIList.get(i).getText());
 
-
         //karşılaştır, birebir aynı mı
         for (int i = 0; i < dbList.size(); i++)
             Assert.assertEquals(dbList.get(i).get(0),
                                 UIList.get(i).getText().trim(),
                                 "Eşleştirme yapılamadı");
-
     }
 }
